@@ -1,75 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Minha Biblioteca</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./style.css/style.css" />
-  </head>
-  <body>
-    <section>
-      <div id="container-master">
-        <div id="content-form">
-          <!--div form-->
-          <h2>ADICIONAR NOVO LIVRO</h2>
-          <form id="form">
-            <input type="text" id="inNome" placeholder="Nome . . ." autofocus />
-            <input type="text" id="inAutor" placeholder="Autor . . ." />
-            <input
-              type="number"
-              id="inAnoPublicacao"
-              placeholder="Ano De Publicação . . ."
-            />
-            <input type="text" id="inGenero" placeholder="Gênero . . ." />
-            <button type="submit">CADASTRAR LIVRO...</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Minha Biblioteca</title>
+  <link rel="stylesheet" href="style.css/style.css" />
+</head>
+<body>
+  <section>
+    <div id="container-master">
+      <div id="content-form">
+        <h2>ADICIONAR NOVO LIVRO</h2>
+        <form id="form">
+          <input type="text" id="inNome" placeholder="Nome . . ." autofocus />
+          <input type="text" id="inAutor" placeholder="Autor . . ." />
+          <input type="number" id="inAnoPublicacao" placeholder="Ano de Publicação . . ." />
+          <input type="text" id="inGenero" placeholder="Gênero . . ." />
+          <button type="submit">CADASTRAR LIVRO...</button>
+        </form>
+      </div>
+
+      <div id="content-livros">
+        <div id="card-livros" class="cards-container"></div>
+        <div id="nenhum-livro">
+          <h2>Nenhum Livro Cadastrado :(</h2>
+        </div>
+
+        <!-- Modal de edição -->
+        <div id="modal-editar" class="modal">
+          <h2>EDITAR LIVRO</h2>
+          <form id="modal-form-editar">
+            <input type="text" id="editarNome" placeholder="Nome . . ." autofocus />
+            <input type="text" id="editarAutor" placeholder="Autor . . ." />
+            <input type="number" id="editarAno" placeholder="Ano de Publicação . . ." />
+            <input type="text" id="editarGenero" placeholder="Gênero . . ." />
+            <div style="display: flex; gap: 10px; justify-content:center; margin-top: 1rem;">
+              <button type="submit" id="salvar-edicao">SALVAR EDIÇÃO</button>
+              <button type="button" id="btnFecharModalEditar">FECHAR</button>
+            </div>
           </form>
         </div>
-        <!--fim div form-->
 
-        <div id="content-livros">
-          <!--div container livros-->
-          <div id="nenhum-livro">
-            <h2>Nenhum Livro Cadastrado :(</h2>
-          </div>
-
-          <div id="modal-editar">
-            <h2>EDITAR LIVRO</h2>
-            <form id="modal-form-editar">
-              <input
-                type="text"
-                id="editarNome"
-                placeholder="Nome . . ."
-                autofocus
-              />
-              <input type="text" id="editarAutor" placeholder="Autor . . ." />
-              <input
-                type="number"
-                id="editarAnoPublicacao"
-                placeholder="Ano De Publicação . . ."
-              />
-              <input type="text" id="editarGenero" placeholder="Gênero . . ." />
-              <button type="submit">SALVAR EDIÇÃO</button>
-              <button type="button">FECHAR</button>
-            </form>
-          </div>
-
-          <div id="modal-excluir">
-            <h2>REALMENTE DESEJA EXCLUIR</h2>
-            <div>
-              <button type="submit" class="btn-modal-excluir">CONFIRMAR</button>
-              <button type="button" class="btn-modal-excluir">CANCELAR</button>
-            </div>
+        <!-- Modal de confirmação de exclusão -->
+        <div id="modal-excluir" class="modal">
+          <h2>Tem certeza que deseja excluir este livro?</h2>
+          <div style="display: flex; gap: 10px; justify-content:center; margin-top: 1rem;">
+            <button id="confirmar-excluir" class="btn-modal-excluir">SIM</button>
+            <button id="cancelar-excluir" class="btn-modal-excluir">NÃO</button>
           </div>
         </div>
-        <!--fim div container livros-->
       </div>
-      <!--fim container master-->
-    </section>
-  </body>
+    </div>
+  </section>
+  <script src="script.js/script.js"></script>
+</body>
 </html>
