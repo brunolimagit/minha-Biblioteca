@@ -186,13 +186,18 @@ button:active {
   z-index: 900;
   display: none;
 }
+.quebrar-linha{
+  display: block;
+}
+.PespacoCard{
+  margin-bottom: 10px;
+}
 
 /* Responsividade para tablets */
 @media (max-width: 1024px) {
   #content-form {
     width: 40%;
   }
-
   #content-livros {
     width: 90%;
     flex-direction: column;
@@ -202,6 +207,11 @@ button:active {
   }
 }
 
+@media(min-width:1025px){
+  #form input {
+    width: 100%;
+  }
+}
 /* Responsividade para celulares */
 @media (max-width: 768px) {
   #container-master {

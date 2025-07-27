@@ -43,10 +43,10 @@ function renderizarLivros() {
     card.classList.add("card");
 
     card.innerHTML = `
-      <p><strong>Nome:</strong> ${livro.nome}</p>
-      <p><strong>Autor:</strong> ${livro.autor}</p>
-      <p><strong>Ano:</strong> ${livro.ano}</p>
-      <p><strong>Gênero:</strong> ${livro.genero}</p>
+      <p class="PespacoCard"><strong>Nome:</strong><span class="quebrar-linha">${livro.nome}</span> </p>
+      <p class="PespacoCard"><strong>Autor:</strong><br> <span class="quebrar-linha">${livro.autor}</span></p>
+      <p class="PespacoCard"><strong>Ano:</strong><span class="quebrar-linha">${livro.ano}</span> </p>
+      <p class="PespacoCard"><strong>Gênero:</strong> <span class="quebrar-linha">${livro.genero}</span></p>
       <div class="btn-cards-excluir-editar">
         <button type="button" class="btn-editar" data-index="${index}">Editar</button>
         <button type="button" class="btn-excluir" data-index="${index}">Excluir</button>
